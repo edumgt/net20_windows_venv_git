@@ -80,6 +80,7 @@ def main():
         for url in iter_urls(args.infile, args.encoding):
             total += 1
             host, port = parse_host_port(url, args.default_port)
+            
             res = tcp_connect(host, port, args.timeout)
 
             if res.get("ok"):
